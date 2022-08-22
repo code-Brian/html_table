@@ -12,29 +12,33 @@
 
 </head>
 <body>
-    <table>
-        <thead>
-            <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Full Name</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for user in users %}
-            <tr>
-                <td>
-                    {{ user['first_name'] }}
-                </td>
-                <td>
-                    {{ user['last_name'] }}
-                </td>
-                <td>
-                    {{ user['first_name'] + " " + user['last_name'] }}
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="table-responsive ">
+        <table class="table table-sm table-borderd table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col'">#</th>
+                    <th scope="col'">First Name</th>
+                    <th scope="col'">Last Name</th>
+                    <th scope="col'">Full Name</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                {% for user in users %}
+                <tr>
+                    <th scope="row">{{ user['user_id'] }}</th>
+                    <td>
+                        {{ user['first_name'] }}
+                    </td>
+                    <td>
+                        {{ user['last_name'] }}
+                    </td>
+                    <td>
+                        {{ user['first_name'] + " " + user['last_name'] }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
